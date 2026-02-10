@@ -53,7 +53,7 @@ const Landing = ({ onStart }) => {
       <div className={styles["music-player"]}>
         <div className={styles["music-label"]}>🎵 Our Song</div>
         <iframe
-          style={{ borderRadius: '12px', overflow: 'hidden' }}
+          style={{ borderRadius: "12px", overflow: "hidden" }}
           src="https://open.spotify.com/embed/track/1Q7EgiMOuwDcB0PJC6AzON?utm_source=generator&theme=0"
           width="100%"
           height="152"
