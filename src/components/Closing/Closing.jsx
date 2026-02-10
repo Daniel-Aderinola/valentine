@@ -51,9 +51,9 @@ const Closing = () => {
 
         {/* 💡 CHANGE THESE TO YOUR REAL NAMES */}
         <div className={styles["closing-names"]}>
-          Your Name
+          Kayode
           <span className={styles.ampersand}>❤️</span>
-          Her Name
+          Seyi
         </div>
 
         <p className={styles["closing-forever"]}>∞ forever and always ∞</p>

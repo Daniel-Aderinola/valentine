@@ -15,38 +15,38 @@ import img7 from "../../images/7.jpeg";
 const photos = [
   {
     src: img1,
-    caption: "The day it all started 💕",
-    date: "January 2024",
+    caption: "You’re my forever kind of beautiful. 💕",
+   
   },
   {
     src: img2,
-    caption: "Our first date — I was so nervous! ☕",
-    date: "February 2024",
+    caption: "Our first date — I was so nervous! 😁",
+   
   },
   {
     src: img3,
-    caption: "That time we couldn't stop laughing 😂",
-    date: "April 2024",
+    caption: "The vieeeeeeeeeeeeeeew 😍",
+    
   },
   {
     src: img4,
-    caption: "You looked so beautiful that day 🌸",
-    date: "June 2024",
+    caption: "You make everything feel okay. ❤️",
+    
   },
   {
     src: img5,
-    caption: "Adventures with my favorite person 🌍",
+    caption: "I choose you, today and always.💫",
     date: "August 2024",
   },
   {
     src: img6,
     caption: "My happy place is with you 🥰",
-    date: "October 2024",
+    
   },
   {
     src: img7,
     caption: "Making memories that last forever ✨",
-    date: "December 2024",
+  
   },
 ];
 
@@ -76,12 +76,12 @@ const Proposal = () => {
   };
 
   // Auto-slide timer
-  useEffect(() => {
-    if (isPaused) return;
+  // useEffect(() => {
+  //   if (isPaused) return;
 
-    intervalRef.current = setInterval(nextSlide, AUTO_SLIDE_INTERVAL);
-    return () => clearInterval(intervalRef.current);
-  }, [isPaused, nextSlide]);
+  //   intervalRef.current = setInterval(nextSlide, AUTO_SLIDE_INTERVAL);
+  //   return () => clearInterval(intervalRef.current);
+  // }, [isPaused, nextSlide]);
 
   // Handle image load error — show placeholder instead
   const handleImageError = (index) => {
@@ -196,17 +196,6 @@ const Proposal = () => {
         ))}
       </div>
 
-      {/* Auto-slide label with pause control */}
-      <div className={styles["auto-label"]}>
-        <button
-          className={styles["pause-btn"]}
-          onClick={() => setIsPaused(!isPaused)}
-          aria-label={isPaused ? "Resume slideshow" : "Pause slideshow"}
-        >
-          {isPaused ? "▶️" : "⏸️"}
-        </button>
-        <span>{isPaused ? "Paused" : "Auto-playing"}</span>
-      </div>
     </section>
   );
 };
