@@ -70,7 +70,7 @@ const LoveLetter = () => {
       id="love-letter"
       ref={sectionRef}
     >
-      {/* Floating roses & love petals */}
+      {/* Floating roses & love petals (rising up) */}
       <div className={styles["roses-container"]}>
         {[
           "🌹",
@@ -89,6 +89,28 @@ const LoveLetter = () => {
           "❤️",
         ].map((emoji, i) => (
           <span key={i} className={styles.rose}>
+            {emoji}
+          </span>
+        ))}
+      </div>
+
+      {/* Falling flowers & hearts (from top) */}
+      <div className={styles["falling-container"]}>
+        {[
+          "🌸",
+          "💖",
+          "🌹",
+          "💗",
+          "🌺",
+          "❤️",
+          "🌷",
+          "💕",
+          "🌸",
+          "💖",
+          "🌺",
+          "💗",
+        ].map((emoji, i) => (
+          <span key={i} className={styles.petal}>
             {emoji}
           </span>
         ))}
