@@ -1,0 +1,146 @@
+/* ============================================
+   MEMORY TIMELINE — Our love story cards
+   Vertical timeline with alternating cards
+   ============================================ */
+
+.timeline-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, var(--cream) 0%, #fff0f3 50%, var(--cream) 100%);
+  position: relative;
+}
+
+.timeline-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.timeline-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--red-love);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-header p {
+  font-family: var(--font-handwritten);
+  font-size: 1.4rem;
+  color: var(--pink-deep);
+}
+
+/* The vertical line */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--pink-soft), var(--red-love), var(--pink-soft));
+  border-radius: 3px;
+}
+
+/* Each memory card */
+.timeline-item {
+  position: relative;
+  width: 42%;
+  padding: 25px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(183, 110, 121, 0.12);
+  margin-bottom: 40px;
+  transition: var(--transition-smooth);
+  border: 1px solid rgba(255, 182, 193, 0.2);
+}
+
+.timeline-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(183, 110, 121, 0.2);
+}
+
+/* Alternate left and right */
+.timeline-item:nth-child(odd) {
+  margin-left: 3%;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 55%;
+}
+
+/* Timeline dot on the center line */
+.timeline-dot {
+  position: absolute;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  background: var(--red-love);
+  border: 3px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.2);
+  z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -48px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -48px;
+}
+
+.timeline-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.timeline-date {
+  font-family: var(--font-handwritten);
+  font-size: 1.1rem;
+  color: var(--pink-deep);
+  margin-bottom: 6px;
+}
+
+.timeline-title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+/* ---------- Mobile: Stack vertically ---------- */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: calc(100% - 50px);
+    margin-left: 50px !important;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-dot,
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: -42px;
+    right: auto;
+  }
+
+  .timeline-header h2 {
+    font-size: 2.2rem;
+  }
+}

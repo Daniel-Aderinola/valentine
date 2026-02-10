@@ -1,0 +1,317 @@
+/* ============================================
+   LANDING PAGE — First impression section
+   Romantic intro with animated heart button
+   ============================================ */
+
+.landing {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(
+    135deg,
+    #fff5f7 0%,
+    #ffe4ec 30%,
+    #ffccd5 60%,
+    #ffb6c1 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft radial glow behind the main content */
+.landing::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 92, 138, 0.15) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.landing-content {
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.landing-date {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--pink-deep);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+  animation: fadeIn 1.5s ease 0.3s both;
+}
+
+.landing-title {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--red-love);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  animation: fadeIn 1.5s ease 0.6s both;
+}
+
+.landing-title span {
+  display: block;
+  font-family: var(--font-handwritten);
+  font-size: 4.5rem;
+  color: var(--pink-deep);
+  margin-top: 0.3rem;
+}
+
+.landing-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--text-soft);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 500px;
+  animation: fadeIn 1.5s ease 0.9s both;
+}
+
+/* The big heart button — the CTA */
+.heart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 40px;
+  font-family: var(--font-handwritten);
+  font-size: 1.5rem;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--pink-deep), var(--red-love));
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(230, 57, 70, 0.35);
+  transition: var(--transition-smooth);
+  animation: fadeIn 1.5s ease 1.2s both, pulse 2s ease-in-out infinite 2.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.heart-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+.heart-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(230, 57, 70, 0.5);
+}
+
+.heart-button:active {
+  transform: scale(0.97);
+}
+
+.heart-icon {
+  font-size: 1.8rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* ---- Floating Clouds ---- */
+@keyframes driftRight {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(120vw); }
+}
+
+@keyframes driftLeft {
+  0%   { transform: translateX(120vw); }
+  100% { transform: translateX(-120%); }
+}
+
+.clouds-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1px);
+  opacity: 0.45;
+}
+
+/* Big soft cloud shapes built from box-shadows */
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+/* --- Cloud 1 (large, top area, drifts right) --- */
+.cloud1 {
+  width: 220px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.7);
+  top: 12%;
+  animation: driftRight 28s linear infinite;
+  box-shadow:
+    60px -30px 0 20px rgba(255, 255, 255, 0.7),
+    120px -10px 0 30px rgba(255, 255, 255, 0.6),
+    30px -45px 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Cloud 2 (medium, mid-upper, drifts left) --- */
+.cloud2 {
+  width: 160px;
+  height: 50px;
+  background: rgba(255, 230, 240, 0.65);
+  top: 25%;
+  animation: driftLeft 34s linear infinite;
+  animation-delay: -8s;
+  box-shadow:
+    40px -25px 0 15px rgba(255, 230, 240, 0.65),
+    90px -8px 0 22px rgba(255, 230, 240, 0.55),
+    20px -35px 0 8px rgba(255, 230, 240, 0.5);
+}
+
+/* --- Cloud 3 (small, lower-mid, drifts right) --- */
+.cloud3 {
+  width: 130px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.55);
+  top: 55%;
+  animation: driftRight 38s linear infinite;
+  animation-delay: -14s;
+  box-shadow:
+    35px -20px 0 12px rgba(255, 255, 255, 0.55),
+    75px -6px 0 18px rgba(255, 255, 255, 0.45);
+}
+
+/* --- Cloud 4 (tiny accent, top-right, drifts left) --- */
+.cloud4 {
+  width: 100px;
+  height: 32px;
+  background: rgba(255, 210, 225, 0.5);
+  top: 8%;
+  animation: driftLeft 42s linear infinite;
+  animation-delay: -20s;
+  box-shadow:
+    28px -16px 0 10px rgba(255, 210, 225, 0.5),
+    60px -4px 0 14px rgba(255, 210, 225, 0.4);
+}
+
+/* --- Cloud 5 (medium, bottom area, drifts right slowly) --- */
+.cloud5 {
+  width: 180px;
+  height: 55px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 72%;
+  animation: driftRight 45s linear infinite;
+  animation-delay: -5s;
+  box-shadow:
+    50px -28px 0 18px rgba(255, 255, 255, 0.5),
+    100px -8px 0 25px rgba(255, 255, 255, 0.4),
+    25px -38px 0 8px rgba(255, 255, 255, 0.35);
+}
+
+/* Scroll indicator */
+.scroll-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--pink-medium);
+  font-size: 0.85rem;
+  font-family: var(--font-body);
+  animation: gentleFloat 2s ease-in-out infinite, fadeIn 2s ease 2s both;
+  opacity: 0;
+}
+
+.scroll-arrow {
+  font-size: 1.2rem;
+  animation: gentleFloat 1.5s ease-in-out infinite;
+}
+
+/* ---- Spotify Music Player ---- */
+.music-player {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  z-index: 10;
+  animation: fadeIn 1.5s ease 2s both;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(183, 110, 121, 0.2);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 6px 8px 2px 8px;
+}
+
+.music-player iframe {
+  display: block;
+  overflow: hidden;
+}
+
+.music-label {
+  font-family: var(--font-handwritten);
+  font-size: 0.85rem;
+  color: var(--pink-deep);
+  text-align: center;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .landing-title {
+    font-size: 2.5rem;
+  }
+  .landing-title span {
+    font-size: 3.2rem;
+  }
+  .heart-button {
+    padding: 15px 32px;
+    font-size: 1.3rem;
+  }
+  .music-player {
+    right: 10px;
+    bottom: 10px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-title {
+    font-size: 2rem;
+  }
+  .landing-title span {
+    font-size: 2.5rem;
+  }
+  .music-player {
+    right: 8px;
+    bottom: 8px;
+    width: 250px;
+  }
+}

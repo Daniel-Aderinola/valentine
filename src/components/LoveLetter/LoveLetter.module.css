@@ -1,0 +1,168 @@
+/* ============================================
+   LOVE LETTER — Typing animation section
+   Handwritten feel with typewriter effect
+   ============================================ */
+
+.love-letter {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, var(--pink-light) 0%, var(--cream) 50%, var(--pink-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Floating Roses & Love ---- */
+@keyframes floatRoseUp {
+  0% {
+    transform: translateY(110vh) rotate(0deg) scale(0.9);
+    opacity: 0;
+  }
+  8% { opacity: 1; }
+  85% { opacity: 0.9; }
+  100% {
+    transform: translateY(-15vh) rotate(340deg) scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes swayRose {
+  0%, 100% { margin-left: 0; }
+  25% { margin-left: 20px; }
+  75% { margin-left: -20px; }
+}
+
+.roses-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.rose {
+  position: absolute;
+  bottom: -10%;
+  animation: floatRoseUp linear infinite, swayRose ease-in-out infinite;
+  user-select: none;
+  opacity: 0;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.12));
+}
+
+.rose:nth-child(1)  { left: 3%;  font-size: 2.4rem; animation-duration: 10s, 4s;  animation-delay: 0s;    }
+.rose:nth-child(2)  { left: 12%; font-size: 2.0rem; animation-duration: 13s, 5s;  animation-delay: 1s;    }
+.rose:nth-child(3)  { left: 22%; font-size: 2.8rem; animation-duration: 11s, 3.5s; animation-delay: 0.5s; }
+.rose:nth-child(4)  { left: 33%; font-size: 1.8rem; animation-duration: 14s, 6s;  animation-delay: 2s;    }
+.rose:nth-child(5)  { left: 42%; font-size: 2.3rem; animation-duration: 10s, 4.5s; animation-delay: 0.3s; }
+.rose:nth-child(6)  { left: 53%; font-size: 2.1rem; animation-duration: 12s, 5.5s; animation-delay: 1.5s; }
+.rose:nth-child(7)  { left: 63%; font-size: 2.6rem; animation-duration: 13s, 3s;  animation-delay: 0.8s;  }
+.rose:nth-child(8)  { left: 72%; font-size: 1.9rem; animation-duration: 9s,  4s;  animation-delay: 2.5s;  }
+.rose:nth-child(9)  { left: 82%; font-size: 2.2rem; animation-duration: 14s, 5s;  animation-delay: 1.2s;  }
+.rose:nth-child(10) { left: 92%; font-size: 2.5rem; animation-duration: 11s, 3.5s; animation-delay: 1.8s; }
+.rose:nth-child(11) { left: 8%;  font-size: 2.0rem; animation-duration: 15s, 6s;  animation-delay: 3s;    }
+.rose:nth-child(12) { left: 48%; font-size: 1.8rem; animation-duration: 12s, 4.5s; animation-delay: 3.5s; }
+.rose:nth-child(13) { left: 76%; font-size: 2.3rem; animation-duration: 10s, 5s;  animation-delay: 2.2s;  }
+.rose:nth-child(14) { left: 28%; font-size: 2.0rem; animation-duration: 11s, 3s;  animation-delay: 4s;    }
+
+.letter-container {
+  max-width: 650px;
+  width: 100%;
+  background: var(--white);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow:
+    0 20px 60px rgba(183, 110, 121, 0.15),
+    0 0 0 1px rgba(255, 182, 193, 0.3);
+  position: relative;
+  transform: rotate(-1deg);
+  animation: swing 6s ease-in-out infinite;
+}
+
+/* Decorative wax seal */
+.letter-container::before {
+  content: '💌';
+  position: absolute;
+  top: -18px;
+  right: 30px;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 3px 6px rgba(0,0,0,0.15));
+}
+
+/* Subtle paper texture lines */
+.letter-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    rgba(255, 182, 193, 0.15) 31px,
+    rgba(255, 182, 193, 0.15) 32px
+  );
+  pointer-events: none;
+}
+
+.letter-greeting {
+  font-family: var(--font-handwritten);
+  font-size: 2rem;
+  color: var(--red-love);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.letter-body {
+  font-family: var(--font-handwritten);
+  font-size: 1.35rem;
+  color: var(--text-soft);
+  line-height: 2;
+  position: relative;
+  z-index: 1;
+  min-height: 200px;
+}
+
+/* Blinking cursor for the typing effect */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.3em;
+  background-color: var(--red-love);
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+
+.letter-signature {
+  font-family: var(--font-handwritten);
+  font-size: 1.8rem;
+  color: var(--pink-deep);
+  text-align: right;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.letter-signature.visible {
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .letter-container {
+    padding: 35px 25px;
+    transform: rotate(0deg);
+  }
+  .letter-body {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+}

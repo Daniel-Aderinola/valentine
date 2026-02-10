@@ -1,0 +1,93 @@
+/* ============================================
+   APP — Main shell styles
+   ============================================ */
+
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Smooth scroll navigation dots (optional enhancement) */
+.nav-dots {
+  position: fixed;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 50;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink-soft);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  padding: 0;
+}
+
+.nav-dot:hover,
+.nav-dot.active {
+  background: var(--red-love);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.4);
+}
+
+/* Entrance animation wrapper */
+.section-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide sections before the heart button is tapped */
+.hidden-initially {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
+/* Loading / entrance transition */
+.entrance-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, var(--pink-light), var(--cream));
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.8s ease;
+}
+
+.entrance-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.entrance-heart {
+  font-size: 4rem;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .nav-dots {
+    right: 8px;
+    gap: 10px;
+  }
+  .nav-dot {
+    width: 8px;
+    height: 8px;
+  }
+}

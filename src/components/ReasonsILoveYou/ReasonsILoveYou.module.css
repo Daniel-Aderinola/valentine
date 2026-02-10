@@ -1,0 +1,134 @@
+/* ============================================
+   REASONS I LOVE YOU — Clickable hearts grid
+   Each heart reveals a reason when clicked
+   ============================================ */
+
+.reasons-section {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--pink-light) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.reasons-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.reasons-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--red-love);
+  margin-bottom: 0.5rem;
+}
+
+.reasons-header p {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--pink-deep);
+}
+
+/* Hearts grid */
+.hearts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Individual heart card */
+.heart-card {
+  position: relative;
+  background: var(--white);
+  border-radius: 16px;
+  padding: 20px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(183, 110, 121, 0.1);
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heart-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--pink-soft);
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.15);
+}
+
+.heart-card.revealed {
+  background: linear-gradient(135deg, #fff0f3, #ffe4ec);
+  border-color: var(--pink-medium);
+}
+
+.heart-card-emoji {
+  font-size: 2.2rem;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.heart-card:hover .heart-card-emoji {
+  transform: scale(1.2);
+}
+
+.heart-card.revealed .heart-card-emoji {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.heart-card-number {
+  font-family: var(--font-handwritten);
+  font-size: 0.9rem;
+  color: var(--pink-medium);
+  margin-top: 5px;
+}
+
+.heart-card-reason {
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.4;
+  animation: fadeIn 0.5s ease;
+}
+
+.heart-card-hint {
+  font-size: 0.7rem;
+  color: var(--pink-medium);
+  margin-top: 4px;
+  font-family: var(--font-body);
+}
+
+/* Counter */
+.reasons-counter {
+  margin-top: 30px;
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  color: var(--pink-deep);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .hearts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .reasons-header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hearts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

@@ -1,0 +1,247 @@
+/* ============================================
+   PHOTO GALLERY — Our Memories Together 📸
+   Auto-sliding carousel from left to right
+   ============================================ */
+
+.gallery-section {
+  min-height: 100vh;
+  padding: 80px 0;
+  background: linear-gradient(180deg, var(--cream) 0%, #fff0f3 50%, var(--cream) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+
+.gallery-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  color: var(--red-love);
+  margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+  font-family: var(--font-handwritten);
+  font-size: 1.3rem;
+  color: var(--pink-deep);
+}
+
+/* ---- Carousel Container ---- */
+.carousel-wrapper {
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(183, 110, 121, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Individual slide */
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--pink-light);
+  position: relative;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder for when no image is set */
+.slide-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--pink-light), #ffe4ec);
+  gap: 10px;
+}
+
+.slide-placeholder-emoji {
+  font-size: 3.5rem;
+}
+
+.slide-placeholder-text {
+  font-family: var(--font-handwritten);
+  font-size: 1rem;
+  color: var(--pink-medium);
+}
+
+/* Caption */
+.slide-caption {
+  background: var(--white);
+  padding: 18px 22px;
+  text-align: center;
+}
+
+.slide-caption-text {
+  font-family: var(--font-handwritten);
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.slide-caption-date {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--pink-medium);
+}
+
+/* ---- Navigation Arrows ---- */
+.nav-arrow {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+  z-index: 5;
+  color: var(--red-love);
+}
+
+.nav-arrow:hover {
+  background: var(--white);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.nav-prev {
+  left: 5px;
+}
+
+.nav-next {
+  right: 5px;
+}
+
+/* ---- Dots Indicator ---- */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pink-soft);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  padding: 0;
+}
+
+.dot.active {
+  background: var(--red-love);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+}
+
+.dot:hover {
+  background: var(--pink-deep);
+}
+
+/* Auto-slide indicator */
+.auto-label {
+  text-align: center;
+  margin-top: 15px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--pink-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pause-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--pink-medium);
+  transition: color 0.3s;
+}
+
+.pause-btn:hover {
+  color: var(--red-love);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .gallery-header h2 {
+    font-size: 2.2rem;
+  }
+  .carousel-wrapper {
+    padding: 0 10px;
+  }
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  .nav-prev {
+    left: 2px;
+  }
+  .nav-next {
+    right: 2px;
+  }
+  .slide-caption {
+    padding: 14px 16px;
+  }
+  .slide-caption-text {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section {
+    padding: 60px 0;
+  }
+  .gallery-header h2 {
+    font-size: 1.9rem;
+  }
+  .slide-image-wrapper {
+    aspect-ratio: 3 / 2.5;
+  }
+}
