@@ -15,42 +15,42 @@ import styles from "./MemoryTimeline.module.css";
 const memories = [
   {
     emoji: "✨",
-    date: "January 2024",
+    date: "06th December 2025",
     title: "The Day We Met",
     description:
       "I didn't know it yet, but my whole life was about to change. One look, one smile, and I was yours.",
   },
   {
-    emoji: "☕",
-    date: "February 2024",
+    emoji: "🌊",
+    date: " 11th December 2025",
     title: "Our First Date",
     description:
-      "Coffee, nervous laughter, and a conversation that felt like we'd known each other forever. I didn't want the night to end.",
+      "Sat at the side of the water, the view was lovly but your smile was the real highlight. I knew then that I wanted to see you again and again.",
   },
   {
-    emoji: "💑",
-    date: "April 2024",
-    title: "We Made It Official",
+    emoji: "⛪",
+    date: "14th December 2025",
+    title: "Went to church together",
     description:
-      'The day you said "yes" to being mine. I swear my heart skipped three beats. Best day of my life.',
+      'it wad a wonderful day, we had a great time together and I felt so happy to be with you. I knew then that I wanted to spend the rest of my life with you.',
   },
   {
-    emoji: "🌅",
-    date: "July 2024",
+    emoji: "🚗",
+    date: "14th December 2025",
     title: "Our First Trip Together",
     description:
-      "Sunsets, sandy toes, and your laugh echoing across the water. I realized I could travel anywhere, as long as it's with you.",
+      "After church we went to watch a game then we went to a concert together, still one of my favorite memories. I had so much fun with you and I felt so happy to be with you.",
   },
   {
     emoji: "🎄",
-    date: "December 2024",
+    date: "December 2025/ January 2026",
     title: "Our First Holiday Season",
     description:
-      "Cozy sweaters, warm cocoa, and decorating together. You made the holidays feel magical in a way they never had before.",
+      "We entered the New year together, can forget how cold i was but it was all worth it because i was with you. ",
   },
   {
     emoji: "❤️",
-    date: "February 2026",
+    date: " 14th February 2026",
     title: "Today — Still Falling for You",
     description:
       "Every single day, I fall a little more in love with you. And I know tomorrow I'll love you even more.",

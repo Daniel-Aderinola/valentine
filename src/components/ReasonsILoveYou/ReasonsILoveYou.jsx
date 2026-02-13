@@ -13,18 +13,18 @@ import styles from "./ReasonsILoveYou.module.css";
 
 // 💡 REPLACE THESE WITH YOUR REAL REASONS!
 const reasons = [
-  "Your smile makes my entire world brighter ☀️",
-  "The way you laugh — it's my favorite sound 🎵",
-  "You believe in me even when I don't 💪",
-  "Your hugs feel like home 🏡",
-  "How you scrunch your nose when you're thinking 👃",
-  "Your kindness to everyone around you 🌸",
-  "The way you sing in the shower 🎤",
-  "You make the boring moments fun 🎉",
-  "Your passion for the things you love 🔥",
-  "How safe I feel when I'm with you 🛡️",
-  "Your terrible jokes that still make me laugh 😂",
-  "Because you chose me — and I'm the luckiest ✨",
+  "Your smile makes my entire world brighter ,",
+  "The way you laugh — it's my favorite sound ,",
+  "You believe in me even when I don't ",
+  "Your hugs feel like home ",
+  "I love your strength, even when you don’t see it ",
+  "Your kindness to everyone around you ,",
+  "love that when I think about the future, you naturally appear in it ",
+  "You make the boring moments fun ",
+  "Your passion for the things you love ,",
+  "I love how being with you makes me want to be a better man, not just for you, but for myself too ",
+  "love you because what we have feels genuine — not forced, not rushed, just real ",
+  "Because you chose me — and I'm the luckiest ",
 ];
 
 const ReasonsILoveYou = () => {
